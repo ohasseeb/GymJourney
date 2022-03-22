@@ -4,6 +4,8 @@ import { TouchableOpacity, View, Text } from "react-native";
 import CustomButton from "../CustomExerciseButton/customExerciseButton.component";
 
 const CustomButtonCollection = ({ navigation }) => {
+  console.log("Hello");
+
   return (
     <View>
       <CustomButton exerciseName={"Arms"} navigation={navigation}>
