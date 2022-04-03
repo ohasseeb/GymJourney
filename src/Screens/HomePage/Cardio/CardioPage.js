@@ -11,7 +11,7 @@ import {
 const CardioPage = () => {
   const pickerValues = [];
   for (let i = 0; i <= 60; i = i + 5) {
-    pickerValues.push(i);
+    pickerValues.push(i.toString());
   }
   return (
     <View>

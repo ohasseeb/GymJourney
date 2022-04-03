@@ -45,14 +45,19 @@ const styles = StyleSheet.create({
 
   innerColumn: {
     flex: 1,
-    border: "black dashed",
+    // borderColor: "black dashed",
     height: 800,
   },
 
   text: {
-    border: "red solid",
+    borderColor: "#FF3D00",
+    borderWidth: 5,
     flex: 1,
-    // height: 100,
+    height: 100,
+  },
+  button: {
+    flex: 1,
+    justifyContent: "flex-end",
   },
 });
 

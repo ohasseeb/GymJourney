@@ -11,7 +11,7 @@ import {
 const SportPage = ({ navigation }) => {
   const pickerValues = [];
   for (let i = 0; i <= 60; i = i + 5) {
-    pickerValues.push(i);
+    pickerValues.push(i.toString());
   }
   return (
     <View>
@@ -34,7 +34,7 @@ const SportPage = ({ navigation }) => {
 
         <Picker>
           {pickerValues.map((val) => (
-            <Picker.Item key={val} label={val} />
+            <Picker.Item key={val.toString()} label={val} />
           ))}
         </Picker>
       </View>
