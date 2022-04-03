@@ -8,7 +8,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import ArmsPage from "./src/Screens/HomePage/Arms/ArmsPage.component";
 import CustomButton from "./src/CustomExerciseButton/customExerciseButton.component";
-import CardioPage from "./src/Screens/HomePage/Cardio/CarioPage";
+import CardioPage from "./src/Screens/HomePage/Cardio/CardioPage";
 import LegsPage from "./src/Screens/HomePage/Legs/LegsPage";
 import RestPage from "./src/Screens/HomePage/Rest/RestPage";
 import SportPage from "./src/Screens/HomePage/Sport/SportPage";
@@ -19,7 +19,7 @@ function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="Arms">
         <Stack.Screen name="Home" component={HomePage} />
         <Stack.Screen name="Arms" component={ArmsPage} />
         <Stack.Screen name="Legs" component={LegsPage} />
