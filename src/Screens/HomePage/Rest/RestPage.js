@@ -27,7 +27,7 @@ const RestPage = () => {
 
 const styles = StyleSheet.create({
   textInput: {
-    borderColor: "#f0f",
+    borderColor: "#000",
     borderWidth: 5,
     height: 500,
   },

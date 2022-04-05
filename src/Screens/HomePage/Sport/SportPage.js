@@ -89,9 +89,9 @@ const styles = StyleSheet.create({
   text: {
     backgroundColor: "skyblue",
     borderColor: "#000",
-    borderWidth: 5,
+    borderWidth: 1,
     justifyContent: "flex-start",
-    fontSize: 40,
+    fontSize: 30,
   }, // End Text Styling
   // customButton: {},
 });

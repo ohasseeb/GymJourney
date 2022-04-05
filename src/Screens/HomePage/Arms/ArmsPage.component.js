@@ -11,9 +11,7 @@ import {
 
 export default function ArmsPage({ navigation }) {
   return (
-    <View>
-      <Text> Welcome to the Arms Page </Text>
-
+    <View style={styles.container}>
       <View>
         <ScrollView
           style={styles.scrollView}
@@ -22,7 +20,7 @@ export default function ArmsPage({ navigation }) {
         >
           <View style={styles.outerColumn}>
             <View style={styles.innerColumn}>
-              <Text> Left Column </Text>
+              <Text style={styles.header}> Previous Workout </Text>
               <Text style={styles.text}> Test 1</Text>
               <Text style={styles.text}> Test 1</Text>
               <Text style={styles.text}> Test 1</Text>
@@ -31,13 +29,37 @@ export default function ArmsPage({ navigation }) {
               <Text style={styles.text}> Test 1</Text>
             </View>
             <View style={styles.innerColumn}>
-              <Text> Right Column </Text>
-              <TextInput style={styles.text} placeholder="Exercise 1" />
-              <TextInput style={styles.text} placeholder="Exercise 2" />
-              <TextInput style={styles.text} placeholder="Exercise 3" />
-              <TextInput style={styles.text} placeholder="Exercise 4" />
-              <TextInput style={styles.text} placeholder="Exercise 5" />
-              <TextInput style={styles.text} placeholder="Exercise 6" />
+              <Text style={styles.header}> Current Workout </Text>
+              <TextInput
+                multiline
+                style={styles.text}
+                placeholder="Exercise 1"
+              />
+              <TextInput
+                multiline
+                style={styles.text}
+                placeholder="Exercise 2"
+              />
+              <TextInput
+                multiline
+                style={styles.text}
+                placeholder="Exercise 3"
+              />
+              <TextInput
+                multiline
+                style={styles.text}
+                placeholder="Exercise 4"
+              />
+              <TextInput
+                multiline
+                style={styles.text}
+                placeholder="Exercise 5"
+              />
+              <TextInput
+                multiline
+                style={styles.text}
+                placeholder="Exercise 6"
+              />
             </View>
           </View>
           <TouchableOpacity title="Send">
@@ -57,12 +79,16 @@ export default function ArmsPage({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+    backgroundColor: "beige",
     // width: 1000,
-    backgroundColor: "rgb(255,255,255)",
+    // backgroundColor: "rgb(255,255,255)",
   },
 
-  scrollView: {
-    marginHorizontal: 20,
+  header: {
+    fontWeight: "600",
+    fontSize: 20,
+    paddingBottom: 10,
   },
 
   outerColumn: {
@@ -70,13 +96,20 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
 
+  textInput: {
+    borderColor: "#f0f",
+    borderWidth: 5,
+    flex: 1,
+    height: 100,
+  },
+
   innerColumn: {
     flex: 1,
     // borderColor: "black dashed",
-    height: 1000,
+    height: 800,
   },
   text: {
-    borderColor: "#f0f",
+    borderColor: "#fff",
     borderWidth: 5,
     flex: 1,
     height: 100,
@@ -86,6 +119,9 @@ const styles = StyleSheet.create({
     height: 50,
     backgroundColor: "#FF9800",
     borderWidth: 5,
+    textAlign: "center",
+    fontSize: 20,
+    justifyContent: "center",
 
     // marginTop: 600,
   },
