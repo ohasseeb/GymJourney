@@ -23,22 +23,37 @@ const CustomButton = ({ exerciseName, navigation }) => {
 
 export default CustomButton;
 
+// https://getcssscan.com/css-buttons-examples Button 59
+
 const styles = StyleSheet.create({
   touchableOpac: {
-    // border: " 12px solid",
-    borderColor: "beige",
-    borderWidth: 12,
-    width: 200,
-    margin: 30,
-    backgroundColor: "black",
-    // alignContent: "center",
     alignItems: "center",
+    backgroundColor: "#fff",
+    borderColor: "black",
+    borderWidth: 3,
+    borderRadius: 2,
+    borderStyle: "solid",
+    color: "#000",
+    height: 75,
+    justifyContent: "center",
+    lineHeight: 24,
+    minWidth: 140,
+    // padding: 17,
+    marginTop: 20,
+    width: 300,
+
+    // display: "flex",
   },
 
   text: {
     // borderColor: "#F3F3F3",
     // border: "dashed",
     fontSize: 30,
-    color: "white",
+    fontWeight: "600",
+    color: "black",
+    letterSpacing: -0.8,
+    lineHeight: 50,
+    textAlign: "center",
+    borderColor: "black",
   },
 });
