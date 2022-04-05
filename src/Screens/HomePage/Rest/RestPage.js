@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   textInput: {
     borderColor: "#f0f",
     borderWidth: 5,
-    height: 100,
+    height: 500,
   },
 });
 

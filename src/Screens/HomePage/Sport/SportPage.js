@@ -9,6 +9,8 @@ import {
   StyleSheet,
 } from "react-native";
 
+import CustomSubmitButton from "../../../CustomSubmitButton/CustomSubmitButton";
+
 class SportPage extends React.Component {
   constructor(props) {
     super(props);
@@ -31,8 +33,7 @@ class SportPage extends React.Component {
       pickerValues.push(i.toString());
     }
     return (
-      <View>
-        <Text> Welcome to the Rest Page</Text>
+      <View style={styles.container}>
         <View>
           <Text style={styles.text}> Last Time:</Text>
           <Text style={styles.text}> Exercise:</Text>
@@ -52,6 +53,7 @@ class SportPage extends React.Component {
             <Picker.Item label="Grass Ultimate" value="Grass Ultimate" />
             <Picker.Item label="Soccer" value="Soccer" />
             <Picker.Item label="Outside Biking" value="Outside Biking" />
+            <Picker.Item label="Other" value="Other" />
           </Picker>
 
           <Picker
@@ -64,15 +66,26 @@ class SportPage extends React.Component {
               <Picker.Item key={val.toString()} label={val} value={`${val}`} />
             ))}
           </Picker>
+          {/* <CustomSubmitButton styles={styles.customButton} /> */}
         </View>
 
-        <Button onPress={printFunction} title="Submit"></Button>
+        <View styles={styles.containerDos}></View>
+        <CustomSubmitButton
+          styles={styles.customButton}
+          onBtnClick={printFunction}
+          SportsPage
+        />
       </View>
     );
   } // end return
 } // end class
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "beige",
+  },
+
   text: {
     backgroundColor: "skyblue",
     borderColor: "#000",
@@ -80,6 +93,7 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     fontSize: 40,
   }, // End Text Styling
+  // customButton: {},
 });
 
 export default SportPage;

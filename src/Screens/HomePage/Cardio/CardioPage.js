@@ -8,6 +8,8 @@ import {
   Picker,
 } from "react-native";
 
+import CustomSubmitButton from "../../../CustomSubmitButton/CustomSubmitButton";
+
 import { StyleSheet } from "react-native";
 
 class CardioPage extends React.Component {
@@ -31,8 +33,7 @@ class CardioPage extends React.Component {
       pickerValues.push(i.toString());
     }
     return (
-      <View>
-        <Text> Welcome to the Cardio Page</Text>
+      <View style={styles.container}>
         <View>
           <Text style={styles.text}> Last Time:</Text>
           <Text style={styles.text}> Exercise:</Text>
@@ -67,7 +68,11 @@ class CardioPage extends React.Component {
           </Picker>
         </View>
 
-        <Button onPress={printFunction} title="Submit"></Button>
+        <CustomSubmitButton
+          onBtnClick={printFunction}
+          CardioPage
+        ></CustomSubmitButton>
+        {/* <Button onPress={printFunction} title="Submit"></Button> */}
       </View>
     );
   }
@@ -83,4 +88,9 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     fontSize: 40,
   }, // End Text Styling
+
+  container: {
+    flex: 1,
+    backgroundColor: "beige",
+  },
 });
