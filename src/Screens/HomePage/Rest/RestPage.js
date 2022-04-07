@@ -8,6 +8,8 @@ import {
   StyleSheet,
 } from "react-native";
 
+import CustomSubmitButton from "../../../CustomSubmitButton/CustomSubmitButton";
+
 const RestPage = () => {
   return (
     <View>
@@ -20,7 +22,8 @@ const RestPage = () => {
         style={styles.textInput}
       />
 
-      <Button title="Submit"> </Button>
+      <CustomSubmitButton RestPage></CustomSubmitButton>
+      {/* <Button title="Submit"> </Button> */}
     </View>
   );
 };

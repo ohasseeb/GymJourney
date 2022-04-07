@@ -19,13 +19,37 @@ class CardioPage extends React.Component {
       this.state = {
         selectedCardio: "TreadMill",
         timeSelection: "0",
+        otherCardio: "",
       }; // end state
     } // end super
   } // end constructor
 
   render() {
+    const OtherComponent = () => {
+      if (this.state.selectedCardio == "Other") {
+        return (
+          <TextInput
+            style={styles.textInput}
+            onChangeText={(inputText) =>
+              this.setState({ otherCardio: inputText })
+            }
+            value={this.state.otherCardio}
+            autoFocus
+            autoCorrect={false}
+          />
+        );
+      } // end if statment
+      else {
+        return null;
+      }
+    };
+
     const printFunction = () => {
-      console.log("Selection: ", this.state.selectedCardio);
+      if (this.state.selectedCardio == "Other") {
+        console.log("OtherCardio:", this.state.otherCardio);
+      } else {
+        console.log(this.state.selectedCardio);
+      }
       console.log("Time Selection: ", this.state.timeSelection);
     };
     const pickerValues = [];
@@ -54,7 +78,10 @@ class CardioPage extends React.Component {
             <Picker.Item label="Basketball" value="Basketball" />
             <Picker.Item label="Outside Run" value="Outside Run" />
             <Picker.Item label="Outside Biking" value="Outside Biking" />
+            <Picker.Item label="Other" value="Other" />
           </Picker>
+
+          <OtherComponent />
 
           <Picker
             selectedValue={this.state.timeSelection}
@@ -88,6 +115,15 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     fontSize: 30,
   }, // End Text Styling
+
+  textInput: {
+    backgroundColor: "green",
+    borderColor: "#000",
+    borderWidth: 1,
+    fontSize: 30,
+    width: 400,
+    alignSelf: "center",
+  },
 
   container: {
     flex: 1,
