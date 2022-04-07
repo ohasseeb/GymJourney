@@ -18,14 +18,41 @@ class SportPage extends React.Component {
       this.state = {
         selection: "Basketball",
         timeSelection: "0",
+        otherInput: "",
       }; // end state
     } // end super
   } // end ctor
 
   render() {
+    const OtherComponent = () => {
+      if (this.state.selection == "Other") {
+        return (
+          <TextInput
+            style={styles.textInput}
+            onChangeText={(inputText) =>
+              this.setState({ otherInput: inputText })
+            }
+            value={this.state.otherInput}
+            // value={this.state.otherInput}
+            placeholder="Sport"
+            autoCorrect={false}
+            autoFocus={true}
+          />
+        );
+      } else {
+        return null;
+      } // end else
+    };
     const printFunction = () => {
-      console.log("Selection:", this.state.selection);
+      // console.log("Selection:", this.state.selection);
       console.log("Time Selection:", this.state.timeSelection);
+      if (this.state.selection == "Other") {
+        console.log("Selection is Other");
+        console.log("OtherInput:", this.state.otherInput);
+      } else {
+        console.log("Selection:", this.state.selection);
+      }
+      // } // end if Statement
     }; // end print function
 
     const pickerValues = [];
@@ -56,6 +83,8 @@ class SportPage extends React.Component {
             <Picker.Item label="Other" value="Other" />
           </Picker>
 
+          <OtherComponent />
+
           <Picker
             selectedValue={this.state.timeSelection}
             onValueChange={(timeValue) =>
@@ -70,6 +99,9 @@ class SportPage extends React.Component {
         </View>
 
         <View styles={styles.containerDos}></View>
+
+        {/* <Modal transparent={true} animationType="slide" visible={true}></Modal> */}
+
         <CustomSubmitButton
           styles={styles.customButton}
           onBtnClick={printFunction}
@@ -86,14 +118,38 @@ const styles = StyleSheet.create({
     backgroundColor: "beige",
   },
 
+  textInput: {
+    backgroundColor: "skyblue",
+    borderColor: "#000",
+    borderWidth: 1,
+    fontSize: 30,
+
+    width: 400,
+    alignSelf: "center",
+  },
+
   text: {
     backgroundColor: "skyblue",
     borderColor: "#000",
-    borderWidth: 5,
+    borderWidth: 1,
     justifyContent: "flex-start",
-    fontSize: 40,
+    fontSize: 30,
   }, // End Text Styling
   // customButton: {},
 });
 
 export default SportPage;
+
+// Alert.alert(
+//       "Alert Title",
+//       "My Alert Msg",
+//       [
+//         {
+//           text: "Cancel",
+//           onPress: () => console.log("Cancel Pressed"),
+//           style: "cancel"
+//         },
+//         { text: "OK", onPress: () => console.log("OK Pressed") }
+//       ],
+//       { cancelable: false }
+//     );

@@ -11,9 +11,7 @@ import {
 
 const LegsPage = ({ navigation }) => {
   return (
-    <View>
-      <Text> Welcome to the Arms Page </Text>
-
+    <View style={styles.container}>
       <View>
         <ScrollView
           style={styles.scrollView}
@@ -22,22 +20,49 @@ const LegsPage = ({ navigation }) => {
         >
           <View style={styles.outerColumn}>
             <View style={styles.innerColumn}>
-              <Text> Left Column </Text>
+              <Text style={styles.header}> Left Column </Text>
               <Text style={styles.text}> Test 1</Text>
-              <Text style={styles.text}> Test 1</Text>
-              <Text style={styles.text}> Test 1</Text>
-              <Text style={styles.text}> Test 1</Text>
-              <Text style={styles.text}> Test 1</Text>
-              <Text style={styles.text}> Test 1</Text>
+              <Text style={styles.text}> Test 2</Text>
+              <Text style={styles.text}> Test 3</Text>
+              <Text style={styles.text}> Test 4</Text>
+              <Text style={styles.text}> Test 5</Text>
+              <Text style={styles.text}> Test 6</Text>
             </View>
             <View style={styles.innerColumn}>
-              <Text> Right Column </Text>
-              <TextInput style={styles.text} placeholder="Exercise 1" />
-              <TextInput style={styles.text} placeholder="Exercise 2" />
-              <TextInput style={styles.text} placeholder="Exercise 3" />
-              <TextInput style={styles.text} placeholder="Exercise 4" />
-              <TextInput style={styles.text} placeholder="Exercise 5" />
-              <TextInput style={styles.text} placeholder="Exercise 6" />
+              <Text style={styles.header}> Right Column </Text>
+              <TextInput
+                multiline
+                style={styles.text}
+                placeholder="Exercise 1"
+              />
+              <TextInput
+                multiline
+                style={styles.text}
+                placeholder="Exercise 2"
+              />
+
+              <TextInput
+                multiline
+                style={styles.text}
+                placeholder="Exercise 3"
+              />
+
+              <TextInput
+                multiline
+                style={styles.text}
+                placeholder="Exercise 4"
+              />
+
+              <TextInput
+                multiline
+                style={styles.text}
+                placeholder="Exercise 5"
+              />
+              <TextInput
+                multiline
+                style={styles.text}
+                placeholder="Exercise 6"
+              />
             </View>
           </View>
 
@@ -57,6 +82,16 @@ const LegsPage = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
+  header: {
+    fontWeight: "600",
+    fontSize: 20,
+    paddingBottom: 10,
+  },
+  container: {
+    flex: 1,
+    backgroundColor: "beige",
+  },
+
   outerColumn: {
     flex: 1,
     flexDirection: "row",
@@ -69,15 +104,18 @@ const styles = StyleSheet.create({
   },
 
   text: {
-    borderColor: "#FF3D00",
+    borderColor: "#000",
     borderWidth: 5,
     flex: 1,
-    height: 100,
+    // height: 100,
+    // justifyContent: "flex-start",
+    // alignContent: "flex-start",
   },
   button: {
     height: 50,
     backgroundColor: "#FF9800",
     borderWidth: 5,
+    textAlign: "center",
   },
 });
 

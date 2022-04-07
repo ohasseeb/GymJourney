@@ -7,7 +7,11 @@ const CustomSubmitButton = ({ paddingVal, onBtnClick, ...otherProps }) => {
   let styleVar = styles.touchableOpac;
   //   console.log(otherProps["sportsPage"]);
 
-  if (otherProps["SportsPage"] || otherProps["CardioPage"]) {
+  if (
+    otherProps["SportsPage"] ||
+    otherProps["CardioPage"] ||
+    otherProps["RestPage"]
+  ) {
     styleVar = styles.widget;
   }
 
