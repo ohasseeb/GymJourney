@@ -12,6 +12,7 @@ import CardioPage from "./src/Screens/HomePage/Cardio/CardioPage";
 import LegsPage from "./src/Screens/HomePage/Legs/LegsPage";
 import RestPage from "./src/Screens/HomePage/Rest/RestPage";
 import SportPage from "./src/Screens/HomePage/Sport/SportPage";
+// import { backgroundColor } from "react-native/Libraries/Components/View/ReactNativeStyleAttributes";
 const Stack = createNativeStackNavigator();
 
 function App() {
@@ -19,15 +20,22 @@ function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomePage} />
-        <Stack.Screen name="Arms" component={ArmsPage} />
-        <Stack.Screen name="Legs" component={LegsPage} />
-        <Stack.Screen name="Cardio" component={CardioPage} />
-        <Stack.Screen name="Rest" component={RestPage} />
-        <Stack.Screen name="Sport" component={SportPage} />
+      <Stack.Navigator
+        initialRouteName="Home"
+        // screenOptions={{ headerStyle: { backgroundColor: "beige" } }}
+      >
+        <Stack.Group
+          screenOptions={{ headerStyle: { backgroundColor: "papayawhip" } }}
+        >
+          <Stack.Screen name="Home" component={HomePage} />
+          <Stack.Screen name="Arms" component={ArmsPage} />
+          <Stack.Screen name="Legs" component={LegsPage} />
+          <Stack.Screen name="Cardio" component={CardioPage} />
+          <Stack.Screen name="Rest" component={RestPage} />
+          <Stack.Screen name="Sport" component={SportPage} />
 
-        {/* <Stack.Screen name="Arms" component={CustomButton} /> */}
+          {/* <Stack.Screen name="Arms" component={CustomButton} /> */}
+        </Stack.Group>
       </Stack.Navigator>
     </NavigationContainer>
     // <View style={styles.container}>
